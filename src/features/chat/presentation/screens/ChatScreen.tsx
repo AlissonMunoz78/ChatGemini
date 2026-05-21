@@ -1,10 +1,16 @@
-import React, { useState, useRef } from 'react';
-import { View, FlatList, TextInput, TouchableOpacity,
-  Text, StyleSheet, KeyboardAvoidingView, Platform,
-  ActivityIndicator } from 'react-native';
+import React, { useRef, useState } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  KeyboardAvoidingView, Platform,
+  StyleSheet,
+  Text,
+  TextInput, TouchableOpacity,
+  View
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useChat } from '../hooks/useChat';
 import { MessageBubble } from '../components/MessageBubble';
+import { useChat } from '../hooks/useChat';
 
 export const ChatScreen: React.FC = () => {
   const [inputText, setInputText] = useState('');
@@ -59,7 +65,7 @@ export const ChatScreen: React.FC = () => {
           />
           <TouchableOpacity
             style={[styles.sendButton,
-              (!inputText.trim() || isLoading) && styles.sendButtonDisabled]}
+            (!inputText.trim() || isLoading) && styles.sendButtonDisabled]}
             onPress={handleSend}
             disabled={!inputText.trim() || isLoading}
           >
